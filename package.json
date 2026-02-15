@@ -1,0 +1,20 @@
+{
+  "name": "tokenfaucet",
+  "version": "1.0.0",
+  "description": "",
+  "main": "hardhat.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "preview": "vite preview --port 3000"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^6.1.0"
+  },
+  "dependencies": {
+    "dotenv": "^17.3.1",
+    "ethers": "^6.16.0"
+  }
+}
