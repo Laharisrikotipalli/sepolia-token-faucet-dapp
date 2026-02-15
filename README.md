@@ -22,20 +22,26 @@ This project consists of:
 -  Evaluation Interface Support
 
 ---
+###  Architecture Diagram
 
-# Architecture Overview
+![Architecture Diagram](docs/architecture.png)
 
-##  System Architecture Diagram
+---
 
-```mermaid
-flowchart TD
+##  System Architecture Explanation
 
-User[ User - MetaMask Wallet]
-Frontend[ React Frontend]
-Faucet[ TokenFaucet Smart Contract]
-Token[ ERC20 Token Smart Contract]
-Sepolia[( Sepolia Network)]
-
+1. User connects wallet via MetaMask
+2. Frontend connects to Faucet smart contract
+3. User requests tokens
+4. Faucet contract:
+   - Checks pause state
+   - Checks 24-hour cooldown
+   - Checks lifetime claim limit
+   - Transfers tokens from Token contract
+5. Event emitted
+6. Frontend updates balance
+---
+```
 User -->|Connect Wallet| Frontend
 Frontend -->|requestTokens()| Faucet
 Faucet -->|mint()| Token
